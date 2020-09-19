@@ -1,11 +1,11 @@
 theme: jekyll-theme-cayman
 # Site settings
-title: My Blog
-SEOTitle: 我的博客 | My Blog
+title: my road
+SEOTitle: my road
 email: 暂无
-description: "写一句你想写的话"
+description: none
 keyword: "我的博客"
-url: "http://ijpq.github.io"          # name改成你的ID
+url: "https://ijpq.github.io"          # name改成你的ID
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/ijpq/ijpq.github.io.git" # 用你的ID替换name
 
@@ -15,8 +15,6 @@ sidebar: true                           # whether or not using Sidebar.
 # SNS settings
 RSS: false
 # weibo_username: 暂无
-zhihu_username:     暂无
 github_username:    暂无
 facebook_username:  暂无
-jianshu_username:   暂无
 #twitter_username: 暂无
