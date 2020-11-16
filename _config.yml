@@ -33,6 +33,7 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap  
+  - jekyll-remote-theme
 
 collections:
   pages:
@@ -60,3 +61,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+
+      
+remote_theme: vszhub/not-pure-poole
