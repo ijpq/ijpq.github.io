@@ -1,7 +1,4 @@
-links:
-- title: Writing
+- title: Blog
   url: /
 - title: About
-  url: /about
-- title: Search
-  url: /search
+  url: /about/
