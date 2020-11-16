@@ -3,6 +3,7 @@ layout: post
 title: (整型,char)和(整型,string)的转换
 comments: true
 tags: [char, string, 类型转换]
+toc: true
 ---
 
 

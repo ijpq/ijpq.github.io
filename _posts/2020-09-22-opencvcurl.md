@@ -3,6 +3,7 @@ layout: post
 title: curl (18) transfer closed with outstanding read data remaining
 comments: true
 tags: [problem]
+toc: true
 ---
 
 编译NVIDIA_DALI时遇到"curl (18) transfer closed with outstanding read data remaining"

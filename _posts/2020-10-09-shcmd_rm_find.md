@@ -3,6 +3,7 @@ layout: post
 title: shell - rm work with find
 comments: true
 tags: [shell]
+toc: true
 ---
 
 # 情况:

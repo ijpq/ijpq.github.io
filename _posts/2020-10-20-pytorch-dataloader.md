@@ -2,6 +2,7 @@
 layout: post
 title: Pytorch - Dataset and Dataloader
 comments: true
+toc: true
 tags: [Pytorch]
 ---
 
