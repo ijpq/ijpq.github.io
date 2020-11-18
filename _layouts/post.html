@@ -32,6 +32,9 @@ layout: default
   {% endif %}
 
   {% include disqus.html %}
+  {% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
 </article>
 
 {% if site.related_posts != empty %}
