@@ -31,12 +31,12 @@ layout: default
     {% include post-tags.html %}
   {% endif %}
 
-  {% include disqus.html %}
-  {% if site.disqus.shortname %}
-  {% include disqus_comments.html %}
-{% endif %}
-</article>
 
+</article>
+{% include disqus.html %}
+{% if site.disqus.shortname %}
+{% include disqus_comments.html %}
+{% endif %}
 {% if site.related_posts != empty %}
 <aside class="related">
   <h2>Related posts</h2>
