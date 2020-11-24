@@ -48,6 +48,9 @@ public:
         cout<<"copy overload"<<endl;
         return *this;
     }
+    ~Point(){
+        cout<<"deconstructor"<<endl;
+    }
     Point foo_bar(Point);
 private:
     int data = 0;
@@ -60,30 +63,55 @@ inline Point::Point(Point&& pp) noexcept{
 
 ## Point.cpp
 ```c++
-
 #include "Point.h"
 #include <memory>
+#include<vector>
 using namespace std;
+
+Point foo_bar2(Point&);
 
 Point global;
 Point foo_bar(Point arg){
-    cout<<"local = arg"<<endl;
+    cout<<"Point local = arg"<<endl;
     Point local = arg; 
-    cout<<"new Point"<<endl;
+
+    cout<<"local = arg"<<endl;
+    local = arg;
+
+    cout<<"foo_bar2(Point&)"<<endl;
+    foo_bar2(local);
+
+    cout<<"vector.push_back(Point)"<<endl;
+    vector<Point> vec;
+    vec.push_back(local);
+
+    cout<<"new Point(global)"<<endl;
     Point *ptr = new Point(global);
+
     cout<<"*ptr = local"<<endl;
     *ptr = local;
+
     cout<<"Point pa[4]"<<endl;
     Point pa[4] = {local, *ptr};
+
+    cout<<"Point* ps = new Point"<<endl;
+    Point* ps = new Point();
+
+    cout<<"delete ps"<<endl;
+    delete ps;
+    
     cout<<"return *ptr"<<endl;
     return *ptr;
+}
+Point foo_bar2(Point& arg){
+    return arg;
 }
 
 int main(){
     int x = 5;
     Point p1(x);
     Point p2 = p1;
-    cout<<"calling foo_bar"<<endl;
+    cout<<"calling foo_bar(Point)"<<endl;
     foo_bar(p1);
     return 0;
 }
@@ -91,47 +119,78 @@ int main(){
 
 ## output
 ```c++
-default constructor // 全局变量 global的默认构造函数
-calling constructor // 变量p1
-// 变量p2
-value of this->data:0 
-calling copy constructor
-after calling: this->data:5
+default constructor
+calling constructor
 
-calling foo_bar
-value of this->data:0 // foo_bar的形参arg
-calling copy constructor
-after calling: this->data:5 // 把实参p1的值拷贝到形参arg
-
-local = arg
 value of this->data:0
 calling copy constructor
 after calling: this->data:5
 
-new Point
-value of this->data:0 // *ptr的初始化
-calling copy constructor
-after calling: this->data:10 //把global的值拷贝到*ptr
-
-*ptr = local //拷贝重载
-copy overload
-
-Point pa[4] 
-value of this->data:0 //数组的第一个元素local
+calling foo_bar(Point)
+value of this->data:0
 calling copy constructor
 after calling: this->data:5
-value of this->data:0 //数组的第二个元素*ptr,因为之前已经被global拷贝,因此现在拷贝给数组第二个元素,使数组第二个元素的值为10
+
+Point local = arg
+value of this->data:0
+calling copy constructor
+after calling: this->data:5
+
+local = arg
+copy overload
+
+foo_bar2(Point&)
+value of this->data:0
+calling copy constructor
+after calling: this->data:5
+
+deconstructor
+
+vector.push_back(Point)
+value of this->data:0
+calling copy constructor
+after calling: this->data:5
+
+new Point(global)
+value of this->data:0
 calling copy constructor
 after calling: this->data:10
 
-//这两个默认构造有待研究,应该和数组的内存分配有关系
+*ptr = local
+copy overload
+
+Point pa[4]
+value of this->data:0
+calling copy constructor
+after calling: this->data:5
+value of this->data:0
+calling copy constructor
+after calling: this->data:10
 default constructor
 default constructor
-//函数返回
+
+Point* ps = new Point
+default constructor
+
+delete ps
+deconstructor
+
 return *ptr
 value of this->data:0
 calling copy constructor
 after calling: this->data:10
+
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
+deconstructor
 ```
 
 # 调用分析
