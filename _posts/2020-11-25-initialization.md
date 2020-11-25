@@ -10,6 +10,62 @@ tags: [initialization, assignment, default initialize, uninitialization, undefin
 看这个就够了,专业的
 
 [cppreference](https://en.cppreference.com/w/cpp/language/initialization)
+
+[static, dynamic, automatic, thread_local](https://en.cppreference.com/w/cpp/language/storage_duration)
+
+# cppreference
+初始化一共分为以下几种:
+1. Value initialization, e.g. std::string s{};
+2. Direct initialization, e.g. std::string s("hello");
+3. Copy initialization, e.g. std::string s = "hello";
+4. List initialization, e.g. std::string s{'a', 'b', 'c'};
+5. Aggregate initialization, e.g. char a[3] = {'a', 'b'};
+6. Reference initialization, e.g. char& c = a[0];
+7. If no initializer is provided, the rules of default initialization apply.
+
+## default initialization
+This is the initialization performed when a variable is constructed with no initializer.
+
+automatic, static, thread_local storage duration with `no initializer`
+dynamic with `new` with `no initializer`
+
+class type - default constructor
+elements in array - default initialized.
+non class - automatic or dynamic - indeterminate
+non class - static or thread local - zero initialized.
+
+### storage duration
+#### automatic
+The storage for the object is allocated at the beginning of the enclosing code block and deallocated at the end
+#### static
+allocated when the program begins and deallocated when the program ends.
+#### thread_local
+ thread begins and deallocated when the thread ends.
+#### dynamic
+allocated and deallocated per request by using dynamic memory allocation functions
+
+特点是`没有括号`
+
+## value initialization
+This is the initialization performed when a variable is constructed with an `empty initializer`.
+
+value initial的特点是空的括号,比如`()`,`{}`
+
+example:
+```c++
+T()	(1)	
+new T ()	(2)	
+Class::Class(...) : member() { ... }	(3)	
+T object {};	(4)	(since C++11)
+T{}	(5)	(since C++11)
+new T {}	(6)	(since C++11)
+Class::Class(...) : member{} { ... }	(7)	(since C++11)
+```
+
+class type - default initialization
+class type - default constructor, zero-initialized and default initialized.
+other - zero-initialized.
+
 # 参考
 [知乎回答](https://www.zhihu.com/question/36735960)
 
