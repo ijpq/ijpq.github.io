@@ -5,7 +5,6 @@ comments: true
 toc: true
 tags: [swap, copy control]
 ---
-
 # 概念引入
 
 swap函数主要用于对象重排序的算法,比如我们自己写的strVec类，实现了动态内存管理。同时strVec类明显需要排序算法，因此在排序过程中需要调用swap，但如果使用std::swap可能无法有效地对对象进行swap，所以需要重载swap。
@@ -75,3 +74,6 @@ HasPtr hp3 = std::move(hp2);
 第二个赋值中，std::move返回右值引用，因此使用move constructor进行拷贝初始化
 
 
+# 最后需要注意的事情
+
+这种操作方式的优点是统一了拷贝和移动赋值运算符，但缺点是使用中间媒介进行拷贝和移动是冗余的操作。效率没有直接分开定义两种运算符高
