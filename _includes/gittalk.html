@@ -1,0 +1,19 @@
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script> 
+<script type="text/javascript" src="/assets/js/md5.min.js"></script>
+<div id="gitalk-container"></div>     
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+    // gitalk的主要参数
+        clientID: 'c5d555cc338dfd7ad889',
+        clientSecret: '4e30e2f83f8c8deab0e4092e56eafc1cdbe035b9',
+        repo: 'ijpq.github.io',
+        owner: 'ijpq',
+        admin: ['ijpq'],
+        id: md5(location.pathname),
+        
+    });
+    gitalk.render('gitalk-container');
+</script> 
+<!-- Gitalk end -->

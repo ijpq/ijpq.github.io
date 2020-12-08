@@ -30,7 +30,11 @@ layout: default
   {% if page.tags %}
     {% include post-tags.html %}
   {% endif %}
-  {% include disqus.html %}
+  <!-- {% include disqus.html %} -->
+  {% if page.comments %}
+
+  {% include gitalk.html %}  //把&改成%
+  {% endif %}
 
 
 </article>
