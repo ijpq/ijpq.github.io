@@ -56,11 +56,11 @@ author:
   name: ke tang
   url: https://github.com/ijpq/
   email: 509634578tk@gmail.com
-# gitalk:
-#   owner: ijpq
-#   repo: ijpq.github.io
-#   clientID: c5d555cc338dfd7ad889
-#   clientSecret: 4e30e2f83f8c8deab0e4092e56eafc1cdbe035b9
+gitalk:
+  owner: ijpq
+  repo: ijpq.github.io
+  clientID: c5d555cc338dfd7ad889
+  clientSecret: 4e30e2f83f8c8deab0e4092e56eafc1cdbe035b9
 
 
 disqus:
