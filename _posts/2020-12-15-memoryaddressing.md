@@ -15,11 +15,11 @@ tags: [memory, address]
 
 我们将内存地址0x...de20起的内存按照字节大小划分,可以得到如下结果
 
-![图](assets/Snipaste_2020-12-15_18-05-49.png)
+![图](/assets/Snipaste_2020-12-15_18-05-49.png)
 
 对应了读取的数据为
 
-![1](assets/Snipaste_2020-12-15_18-06-13.png)
+![1](/assets/Snipaste_2020-12-15_18-06-13.png)
 
 对应关系如下所示
 
