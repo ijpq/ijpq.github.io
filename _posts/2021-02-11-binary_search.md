@@ -127,3 +127,6 @@ int lower_bound(const vector<int> &nums, const int target) {
 处理数组索引的时候考虑一下数组长度就可以了
 
 
+
+## reference
+[清华 数据结构 邓俊晖 关于二分查找的讲解](https://www.xuetangx.com/learn/THU08091000384/THU08091000384/5883586/video/9215627)
