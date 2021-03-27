@@ -61,6 +61,7 @@ int main(void)
 
 ---
 几乎所有的计算系统中，a 除 n 得到商 q 和余数 r 均满足以下式子：
+
 $$
 \begin{aligned}
 q & \in \mathbb{Z} \\
