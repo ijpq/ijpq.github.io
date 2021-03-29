@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 一些数学运算 
+title: 一些数学运算
 comments: true
 toc: true
 tags: [cpp, c++, C, mod, XOR]
