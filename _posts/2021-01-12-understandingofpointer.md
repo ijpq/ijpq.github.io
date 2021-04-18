@@ -51,3 +51,5 @@ int (*(*f())[13])() // 8
 // that point to a array of int
 int (*(*x[3])())[5] // 9
 ```
+---
+[other refs](https://www.geeksforgeeks.org/dynamically-allocate-2d-array-c/)
